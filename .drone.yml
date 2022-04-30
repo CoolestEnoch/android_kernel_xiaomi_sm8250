@@ -10,7 +10,7 @@ clone:
 
 steps:
   - name: setup&build
-    image: ubuntu:latest
+    image: debian:stable-slim
     environment:
       BOTTOKEN:
         from_secret: bot_token
