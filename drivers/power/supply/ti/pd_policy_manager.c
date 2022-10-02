@@ -1568,6 +1568,10 @@ static void usbpd_pm_workfunc(struct work_struct *work)
 			internal = PM_WORK_RUN_QUICK_INTERVAL;
 		else
 			internal = PM_WORK_RUN_NORMAL_INTERVAL;
+
+		/* Force internal to 100 */
+		internal = PM_WORK_RUN_CRITICAL_INTERVAL;
+		
 		schedule_delayed_work(&pdpm->pm_work,
 				msecs_to_jiffies(internal));
 	}
